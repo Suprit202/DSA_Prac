@@ -1,0 +1,30 @@
+class Solution {
+  public:
+    void segregateElements(vector<int>& arr) {
+        int n=arr.size();
+        int temp[n];   // temporary array
+        int j = 0;
+
+        // Step 1: Copy positives
+        for (int i = 0; i < n; i++) {
+            if (arr[i] >= 0) {
+                temp[j] = arr[i];
+                j++;
+            }
+        }
+    
+        // Step 2: Copy negatives
+        for (int i = 0; i < n; i++) {
+            if (arr[i] < 0) {
+                temp[j] = arr[i];
+                j++;
+            }
+        }
+    
+        // Step 3: Copy back to original array
+        for (int i = 0; i < n; i++) {
+            arr[i] = temp[i];
+        }
+
+    }
+};

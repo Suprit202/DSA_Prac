@@ -1,0 +1,15 @@
+class Solution {
+  public:
+    vector<int> findUnion(vector<int>& a, vector<int>& b) {
+        // code here
+        set<int> nums(a.begin(), a.end());
+        
+        for(auto num : b){
+            nums.insert(num);
+        }
+        
+        vector<int> result(nums.begin(), nums.end());
+        
+        return result;
+    }
+};
